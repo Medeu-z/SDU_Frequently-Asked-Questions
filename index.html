@@ -11,28 +11,26 @@
 </head>
 
 <body>
-    <header></header>
-    <script type="text/javascript">
-        var page = 1,
-            moving = false;
-        var animationIteration = "animationiteration webkitAnimationIteration mozAnimationIteration oAnimationIteration oanimationiteration",
-            transitionEnd = "transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd";
-        $(".load-more").on("click", function () {
-            if (moving == false) {
-                moving = true;
-                $(".load-more").addClass("active");
-                setTimeout(function () {
-                    $(".load-more").one(animationIteration, function () {
-                        $(".load-more").removeClass("active");
-                        $(".load-more").one(transitionEnd, function () {
-                            page++;
-                            moving = false;
-                        });
-                    });
-                }, 2000);
-            }
-        });
-    </script>
+    <header>
+        <img src="./images/sdu-logo-white.svg" alt="SDU logo" class="logo">
+        <nav>
+            <input type="checkbox" id="checkbox-menu">
+            <label for="checkbox-menu" id="lable">
+                <span class="toggle"  id="openNav" onclick="openNavBar()">&#9776;</span>
+                <div class="navbar-back">
+                    <ul class="menu touch">
+                        <span id="closeNav" onclick="closeNavBar()">&times;</span>
+                        <li><a class="lang activeLanguage" onclick="onLanguageClick(this)">ENG</a></li>
+                        <li><a class="lang .notactiveLanguage" onclick="onLanguageClick(this)">KZ</a></li>
+                        <li><a class="lang .notactiveLanguage" onclick="onLanguageClick(this)">RU</a></li>
+                    </ul>
+                </div>
+                
+            </label>
+        </nav>
+    </header>
+
+    
     <main>
         <section class="main" style="background-image: url(./images/main.jpg);">
             <div class="container">

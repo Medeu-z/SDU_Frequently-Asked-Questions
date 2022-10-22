@@ -1,3 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body, html{
+    overflow-x: hidden;
+
+   
+}
+body{
+    transition: background-color .6s;
+}
+header{
+    background-color: #082673;
+    color: white;
+    height: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    transition: background-color .4s;
+ 
+}
+.logo{
+    height: 40px;
+    width: 62px;
+    padding: 8px 4px 8px 30px;
+    transition: visibility .1s;
+    opacity: 1;
+
+}
+#checkbox-menu, .toggle{
+    display: none;
+}
+.menu{
+    list-style-type: none;
+    display: flex;
+    align-items: center; 
+}
+.menu li{
+    width: 63px;
+}
+.menu li a{
+   text-decoration: none;
+   font-family: 'Roboto', sans-serif;
+   font-size: 16px;
+   padding: 6px 10px;
+}
+.activeLanguage{
+    background-color: white;
+    color: black;   
+}
+.notactiveLanguage{
+    background-color: transparent;
+    color: white;   
+}
+#closeNav{
+    display: none;
+}
+
+@media screen and (max-width: 770px){
+    .toggle{
+        display: block;
+        clear: both;
+        margin-right: 30px;
+        font-size: 23px;
+    }
+    .rotate{
+        animation: rotation 0.2s linear 0s 1;
+    }
+    @keyframes rotation {
+        to {
+          transform: rotate(150deg)
+        }
+      }
+    #closeNav{
+        display: block;
+        font-size: 40px;
+        margin-top: 5px;
+        margin-left: 150px;
+        text-align: end;   
+    }
+    #checkbox-menu:checked + label .touch{
+        width: 250px;
+    }
+    #checkbox-menu:checked + label .navbar-back{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.4);
+        transition: 0.3s;
+    }
+    #checkbox-menu:checked + label .touch li{
+        opacity: 1;
+        visibility: visible;
+        transition: all .3s linear;
+        margin-right: 10px;
+    }
+    .menu{
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        background-color: #082673;
+        overflow-x: hidden;
+        transition: 0.3s;
+        display: flex;
+        flex-direction: column;
+    }
+    .menu li{
+        margin: 10px -200px 10px 10px;
+        text-align: end;
+        padding-left: 60px;
+        
+    }
+    .activeLanguage{
+        background-color: transparent;
+        color: white; 
+        font-weight: 900;  
+    }
+}
+    
 .main {
     padding-top: 20%;
     padding-bottom: 20%;
