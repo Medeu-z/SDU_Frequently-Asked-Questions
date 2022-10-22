@@ -9,7 +9,25 @@
     <title>Document</title>
 </head>
 <body>
-    <header></header>
+    <header>
+        <img src="./images/sdu-logo-white.svg" alt="SDU logo" class="logo">
+        <nav>
+            <input type="checkbox" id="checkbox-menu">
+            <label for="checkbox-menu" id="lable">
+                <span class="toggle"  id="openNav" onclick="openNavBar()">&#9776;</span>
+                <div class="navbar-back">
+                    <ul class="menu touch">
+                        <span id="closeNav" onclick="closeNavBar()">&times;</span>
+                        <li><a class="lang activeLanguage" onclick="onLanguageClick(this)">ENG</a></li>
+                        <li><a class="lang .notactiveLanguage" onclick="onLanguageClick(this)">KZ</a></li>
+                        <li><a class="lang .notactiveLanguage" onclick="onLanguageClick(this)">RU</a></li>
+                    </ul>
+                </div>
+                
+            </label>
+        </nav>
+    </header>
+
     <main>
         <section class="main"></section>
         <section class="faq"></section>
