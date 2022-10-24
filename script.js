@@ -75,6 +75,8 @@ function processRows(arr) {
     }
 }
 function onLanguageClick(obj){
+    document.querySelector('header').style.backgroundColor = "#082673";
+    document.querySelector('.logo').style.visibility = "visible";  
     const arr = document.querySelectorAll(".lang");
     for (let i = 0; i < arr.length; i++) {
         if(arr[i] == obj){
