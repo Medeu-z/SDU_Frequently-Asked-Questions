@@ -5,6 +5,8 @@ const query = encodeURIComponent('Select *')
 const url = `${base}&sheet=${sheetName}&tq=${query}`
 const data = []
 let questions = []
+let questionLanguage = "Questions";
+let answerLanguage = "ENG";
 
 document.addEventListener('DOMContentLoaded', init)
 
@@ -43,7 +45,7 @@ function processRows(arr) {
             const button = document.createElement('button');
                   button.classList.add('collapsible');
                   button.onclick = openContentFunction;
-                  button.innerHTML = arr[i]["Questions"];
+                  button.innerHTML = arr[i][questionLanguage];
             const div = document.createElement('div');
                   div.classList.add('faq-content');
             let k = 1;
@@ -53,17 +55,17 @@ function processRows(arr) {
                     const card = document.createElement("div");
 
                     const cardQuestion = document.createElement("p");
-                          cardQuestion.innerHTML = k +". "+ arr[j]["Questions"];
+                          cardQuestion.innerHTML = k +". "+ arr[j][questionLanguage];
                           k++;
                           cardQuestion.classList.add('faq-content-question');
                     const cardAnswer = document.createElement("p");
-                          cardAnswer.innerHTML = arr[j]["ENG"];
+                          cardAnswer.innerHTML = arr[j][answerLanguage];
                           cardAnswer.classList.add('faq-content-answer');
 
                     card.append(cardQuestion, cardAnswer);
-                    if(arr[j]["ENG"].length != 0){
+                    if(arr[j][answerLanguage].length != 0){
                         div.append(card);
-                        questionElements.push({ question: arr[j]["Questions"], element: card});   
+                        questionElements.push({ question: arr[j][questionLanguage], element: card});   
                     }else{ k--; }
                 }else{ break; }
             }
@@ -78,17 +80,38 @@ function onLanguageClick(obj){
         if(arr[i] == obj){
             obj.classList.add("activeLanguage");
             obj.classList.remove("notactiveLanguage");
-
         }else{
             arr[i].classList.add("notactiveLanguage");
             arr[i].classList.remove("activeLanguage");
 
         }
       }
-    //console.log(obj.innerText);
+      let inputText = document.getElementById("search");
+      switch(obj.innerText) {
+        case "KZ":
+            answerLanguage = "KZ";
+            questionLanguage = "Cұрақтар";
+            inputText.placeholder = "Сұрағыңызды іздеу үшін осында  жазыңыз.";
+          break;
+        case "RU":
+            answerLanguage = "RU";
+            questionLanguage = "Вопросы";
+            inputText.placeholder = "Введите свой вопрос здесь для поиска.";
+
+          break;
+        default:
+            answerLanguage = "ENG";
+            questionLanguage = "Questions";
+            inputText.placeholder = "Type your question here to search.";
+
+      }
+      let faq_list = document.getElementById("faq-list");
+      while (faq_list.firstChild) {
+        faq_list.removeChild(faq_list.lastChild);
+      }
+      processRows(data);
   
 }
-
 function openNavBar(){
     document.querySelector('header').style.backgroundColor = "transparent";
     document.querySelector('header').style.backgroundColor = "transparent";
