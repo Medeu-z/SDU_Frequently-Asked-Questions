@@ -10,9 +10,6 @@ body, html{
     overflow-x: hidden;   
     scroll-behavior: smooth;
 }
-body{
-    transition: background-color .6s;
-}
 header{
     background-color: #082673;
     color: white;
@@ -61,9 +58,11 @@ header{
     display: none;
 }
 
-
+main{
+    margin-bottom: 10px;
+}
 .main {
-    background-image: linear-gradient(rgba(52, 52, 52, 0.25),rgba(45, 45, 45, 0.3)),
+    background-image: linear-gradient(rgba(52, 52, 52, 0.25),rgba(45, 45, 45, 0.25)),
                       url(./images/main.jpg);
     background-position: center top;
     background-repeat: no-repeat;
@@ -167,6 +166,27 @@ header{
     display: none;
 }
 
+.form{
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    background-color: #f3f4f8;
+}
+.form p{
+    color: #082673;
+    text-align: center;
+    font-family: 'Roboto', serif;
+    font-weight: 400;
+    font-size: 18.6px;
+    margin-bottom: 15px;
+}
+footer{
+    background-color: #082673;
+    height: 80px;
+    width: 100%;
+}
 
 @media screen and (max-width: 770px){
     .toggle{
@@ -182,7 +202,7 @@ header{
         to {
           transform: rotate(150deg)
         }
-      }
+    }
     #closeNav{
         display: block;
         font-size: 40px;
@@ -234,8 +254,6 @@ header{
     }
     .faq{
         margin: 0px 30px;
-    }
-   
-   
+    } 
 }
  
