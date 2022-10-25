@@ -89,22 +89,26 @@ function onLanguageClick(obj){
         }
       }
       let inputText = document.getElementById("search");
+      let formTitle = document.getElementById("form-title");
       switch(obj.innerText) {
         case "KZ":
             answerLanguage = "KZ";
             questionLanguage = "Cұрақтар";
             inputText.placeholder = "Сұрағыңызды іздеу үшін осында  жазыңыз.";
+            formTitle.innerText = "Сұрақтарыңыз болса, осы форманы толтыра аласыз.";
           break;
         case "RU":
             answerLanguage = "RU";
             questionLanguage = "Вопросы";
             inputText.placeholder = "Введите свой вопрос здесь для поиска.";
+            formTitle.innerText = "Если у вас есть вопросы, вы можете заполнить эту форму.";
 
           break;
         default:
             answerLanguage = "ENG";
             questionLanguage = "Questions";
             inputText.placeholder = "Type your question here to search.";
+            formTitle.innerText = "If you have questions, you can fill this form.";
 
       }
       let faq_list = document.getElementById("faq-list");
