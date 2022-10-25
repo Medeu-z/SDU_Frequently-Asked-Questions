@@ -179,9 +179,9 @@ main{
     text-align: center;
     font-family: 'Roboto', serif;
     font-weight: 400;
-    font-size: 18.6px;
+    font-size: 1.2rem;
     margin-bottom: 15px;
-    padding: 0 10px;
+    padding: 0 20px;
 }
 footer{
     background-color: #082673;
