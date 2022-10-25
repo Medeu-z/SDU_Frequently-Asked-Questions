@@ -181,6 +181,7 @@ main{
     font-weight: 400;
     font-size: 18.6px;
     margin-bottom: 15px;
+    padding: 0 10px;
 }
 footer{
     background-color: #082673;
